@@ -17,3 +17,4 @@
 export * from './entityMetadataFactRetriever';
 export * from './entityOwnershipFactRetriever';
 export * from './techdocsFactRetriever';
+export * from './dynamicEntityFactRetriever';

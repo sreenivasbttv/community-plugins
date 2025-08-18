@@ -40,6 +40,7 @@ import {
   entityMetadataFactRetriever,
   entityOwnershipFactRetriever,
   techdocsFactRetriever,
+  dynamicEntityFactRetriever,
 } from '../service';
 import { createFactRetrieverRegistrationFromConfig } from './config';
 
@@ -78,6 +79,7 @@ export const techInsightsPlugin = createBackendPlugin({
       entityMetadataFactRetriever,
       entityOwnershipFactRetriever,
       techdocsFactRetriever,
+      dynamicEntityFactRetriever,
     };
     env.registerExtensionPoint(techInsightsFactRetrieversExtensionPoint, {
       addFactRetrievers(factRetrievers: Record<string, FactRetriever>): void {
