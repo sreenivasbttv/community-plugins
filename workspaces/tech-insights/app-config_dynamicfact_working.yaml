@@ -79,9 +79,6 @@ techInsights:
     dynamicEntityFactRetriever:
       cadence: '*/15 * * * *'
       lifecycle: { timeToLive: { weeks: 2 } }
-    dynamicEntityFactRetrieverAPIs:
-      cadence: '*/15 * * * *'
-      lifecycle: { timeToLive: { weeks: 2 } }
   factChecker:
     checks:
       groupOwnerCheck:
@@ -111,18 +108,5 @@ techInsights:
                 value: "https://github.com/backstage/backstage/tree/master/plugins/playlist"
               - fact: annotations
                 path: "$['backstage.io/linguist']"
-                operator: notEqual
-                value: ""
-      hasDefinition:
-        type: json-rules-engine
-        name: "Has Definition in API"
-        description: "Check if entity has Definition"
-        factIds: 
-          - dynamicEntityFactRetrieverAPIs
-        rule:
-          conditions:
-            all:
-              - fact: spec
-                path: "$.['definition']"
                 operator: notEqual
                 value: ""

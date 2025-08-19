@@ -41,6 +41,10 @@ import {
   entityOwnershipFactRetriever,
   techdocsFactRetriever,
   dynamicEntityFactRetriever,
+  dynamicEntityFactRetrieverComponents,
+  dynamicEntityFactRetrieverAPIs,
+  dynamicEntityFactRetrieverProduction,
+  dynamicEntityFactRetrieverServices,
 } from '../service';
 import { createFactRetrieverRegistrationFromConfig } from './config';
 
@@ -80,6 +84,10 @@ export const techInsightsPlugin = createBackendPlugin({
       entityOwnershipFactRetriever,
       techdocsFactRetriever,
       dynamicEntityFactRetriever,
+      dynamicEntityFactRetrieverComponents,
+      dynamicEntityFactRetrieverAPIs,
+      dynamicEntityFactRetrieverProduction,
+      dynamicEntityFactRetrieverServices,
     };
     env.registerExtensionPoint(techInsightsFactRetrieversExtensionPoint, {
       addFactRetrievers(factRetrievers: Record<string, FactRetriever>): void {

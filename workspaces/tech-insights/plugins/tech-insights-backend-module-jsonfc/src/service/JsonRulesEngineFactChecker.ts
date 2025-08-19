@@ -143,9 +143,13 @@ export class JsonRulesEngineFactChecker
       }
 
       // Checks if all facts are present in the factValues
-      const hasFacts = usedFacts.every(factId =>
-        factValues.hasOwnProperty(factId),
-      );
+      // const hasFacts = usedFacts.every(factId =>
+      //   factValues.hasOwnProperty(factId),
+      // );
+
+      // According to https://github.com/backstage/community-plugins/issues/4900
+      const hasFacts = techInsightCheck.factIds.every(factId => facts[factId]);
+
       if (hasFacts) {
         engine.addRule({ ...techInsightCheck.rule, event: noopEvent });
       } else {
